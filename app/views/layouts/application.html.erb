@@ -32,6 +32,11 @@
           href: root_path,
           active: current_page?(root_path)
         )
+        header.with_navigation_item(
+          text: 'Content',
+          href: contents_path,
+          active: current_page?(contents_path)
+        )
       end
     %>
 

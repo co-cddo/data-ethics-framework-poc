@@ -1,6 +1,6 @@
 class ContentsController < ApplicationController
   def index
-    @contents = Content.all.values
+    @contents = Content.all_by_position
   end
 
   def show

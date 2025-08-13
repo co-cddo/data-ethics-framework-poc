@@ -7,7 +7,7 @@
       "check_name": "CrossSiteScripting",
       "message": "Unescaped model attribute",
       "file": "app/views/contents/show.html.erb",
-      "line": 5,
+      "line": 9,
       "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
       "code": "Content.find(params[:id]).to_html",
       "render_path": [

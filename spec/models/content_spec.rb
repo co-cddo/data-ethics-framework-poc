@@ -22,8 +22,8 @@ RSpec.describe Content, type: :model do
       expect(content).to be_a(described_class)
     end
 
-    it "returns a content with matching name" do
-      expect(content.name).to eq(name)
+    it "returns a content with an id matching name" do
+      expect(content.id).to eq(name)
     end
   end
 
@@ -32,6 +32,57 @@ RSpec.describe Content, type: :model do
 
     it "returns the content body as html" do
       expect(content.to_html).to eq(html)
+    end
+  end
+
+  context "with stubbed data" do
+    let(:data) do
+      {
+        a: { name: "a", title: "a", body: "A", position: 2 },
+        b: { name: "b", title: "b", body: "B", position: 3 },
+        c: { name: "c", title: "c", body: "C", position: 1 },
+      }
+    end
+
+    before do
+      allow(described_class).to receive(:all).and_return(data)
+    end
+
+    after do
+      described_class.reset_all_by_position
+    end
+
+    let(:a) { described_class.find(:a) }
+    let(:b) { described_class.find(:b) }
+    let(:c) { described_class.find(:c) }
+
+    describe ".all_by_position" do
+      subject(:all_by_position) { described_class.all_by_position }
+
+      it "returns an array" do
+        expect(all_by_position).to be_a(Array)
+      end
+
+      it "returns the data values ordered by position" do
+        expect(all_by_position.first).to eq(data[:c])
+        expect(all_by_position.last).to eq(data[:b])
+      end
+    end
+
+    describe "#next" do
+      it "returns the next content if there is one" do
+        expect(c.next).to eq(a)
+        expect(a.next).to eq(b)
+        expect(b.next).to be_nil
+      end
+    end
+
+    describe "#previous" do
+      it "return the previous content if there is one" do
+        expect(c.previous).to be_nil
+        expect(a.previous).to eq(c)
+        expect(b.previous).to eq(a)
+      end
     end
   end
 end

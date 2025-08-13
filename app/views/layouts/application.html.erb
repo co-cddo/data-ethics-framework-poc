@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <% service_name = "Data Ethics Framework POC" %>
+    <title><%= [service_name, content_for(:title)].compact.join(" - ") %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, defer: true %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body>
+    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <%=
+      govuk_header(service_name:) do |header|
+        header.with_navigation_item(
+          text: 'Home',
+          href: root_path,
+          active: current_page?(root_path)
+        )
+      end
+    %>
+
+    <div class="govuk-width-container ">
+      <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+            &nbsp;
+            <%= govuk_notification_banner(title_text: 'Notice', text: notice, success: true) if notice.present? %>
+            <%= govuk_notification_banner(title_text: 'Alert', text: alert) if alert.present? %>
+          </div>
+          <div class="govuk-grid-column-one-quarter govuk-!-text-align-right">
+            <%#= user_signed_in? ? logout_button : login_button %>
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <%= yield %>
+          </div>
+        </div>
+      </main>
+    </div>
+    <%= render GovukComponent::FooterComponent.new do |footer| %>
+      <%= footer.with_meta_html %>
+    <% end %>
+  </body>
+</html>

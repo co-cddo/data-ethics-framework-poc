@@ -1,0 +1,42 @@
+name: overarching_principles
+title: Overarching Principles
+position: 2
+body: |
+  Transparency
+  -------------
+  Transparency means that your actions, processes and data are made open to inspection by publishing information about the project in a complete, open, understandable, easily-accessible,
+  and free format. In your work with and on data and AI, use the available guidance, for example the Open Government Playbook, to ensure transparency throughout the entirety of your process.
+
+  Score the transparency of your project from 0 to 5 where:
+
+  - 0 means information about the project, its methods, and outcomes is not publicly available
+  - 5 means information about the project, its methods, and outcomes is widely available to the public
+
+  Accountability
+  ---------------
+  Accountability means that there are effective governance and oversight mechanisms for any project. Public accountability means that the public or its representatives are able to exercise
+  effective oversight and control over the decisions and actions taken by the government and its officials, in order to guarantee that government initiatives meet their stated objectives
+  and respond to the needs of the communities they are designed to benefit.
+
+  Score the accountability of your project from 0 to 5 where:
+
+  - 0 means mechanisms for scrutiny, governance, or peer review for the project haven’t been established
+  - 5 means long-term oversight and public scrutiny mechanisms are built into the project cycle
+
+  Fairness
+  --------
+  It is crucial to eliminate your project’s potential to have unintended discriminatory effects on individuals and social groups. You should aim to mitigate biases which may influence your
+  model’s outcome and ensure that the project and its outcomes respect the dignity of individuals, are just, non-discriminatory, and consistent with the public interest, including human
+  rights and democratic values.
+
+  You can read more about fairness and its different types in the
+  [‘Understanding artificial intelligence ethics and safety’](https://www.gov.uk/guidance/understanding-artificial-intelligence-ethics-and-safety)
+  guide developed by the Government Digital Service and the Office for Artificial Intelligence.
+
+  You can read more about the standards regarding human rights in AI and machine learning in the
+  [Toronto Declaration](https://www.torontodeclaration.org/) developed by Access Now and Amnesty International.
+
+  Score the fairness of your project from 0 to 5 where:
+
+  - 0 means there is a significant risk that the project will result in harm or detrimental and discriminatory effects for the public or certain groups
+  - 5 means the project promotes just and equitable outcomes, has negligible detrimental effects, and is aligned with human rights considerations

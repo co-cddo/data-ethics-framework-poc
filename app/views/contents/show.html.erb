@@ -1,5 +1,13 @@
+<p class="govuk-body">
+  <%= govuk_link_to("Back to: #{@content.previous.title}", content_path(@content.previous.id)) if @content.previous %>
+</p>
+
 <% content_for :title, @content.title %>
 
 <h1 class="govuk-heading-l"><%= @content.title %></h1>
 
 <%= @content.to_html.html_safe %>
+
+<p class="govuk-body">
+  <%= govuk_link_to("Proceed to: #{@content.next.title}", content_path(@content.next.id)) if @content.next %>
+</p>

@@ -1,0 +1,7 @@
+<% content_for :title, "Contents" %>
+
+<%= govuk_list do  %>
+  <% @contents.each do |content| %>
+    <%= tag.li govuk_link_to(content[:title], content_path(content[:name])) %>
+  <% end %>
+<% end %>

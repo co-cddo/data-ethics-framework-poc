@@ -2,22 +2,20 @@ class Content
   CONTENT_PATH = Rails.root.join("content/*.yml")
 
   def self.all
-    @all ||= begin
-      Dir.glob(CONTENT_PATH).each_with_object({}) do |path, hash|
-        content = YAML.load_file(path, symbolize_names: true)
-        name = content[:name].to_sym
-        hash[name] = content
-      end
+    @all ||= Dir.glob(CONTENT_PATH).each_with_object({}) do |path, hash|
+      content = YAML.load_file(path, symbolize_names: true)
+      name = content[:name].to_sym
+      hash[name] = content
     end
   end
 
   def self.find(name)
-    raw = all[name]
+    raw = all[name.to_sym]
     new(raw)
   end
 
-  delegate :to_html, to: :document
   attr_reader :raw
+
   def initialize(raw)
     @raw = raw
   end
@@ -34,6 +32,7 @@ class Content
     @body ||= raw[:body]
   end
 
+  delegate :to_html, to: :document
   def document
     @document ||= Govspeak::Document.new(body)
   end

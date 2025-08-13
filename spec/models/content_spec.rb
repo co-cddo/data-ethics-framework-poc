@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Content, type: :model do
-  let(:raw_content) { YAML.load_file(Rails.root.join('content/how_to_use.yml'), symbolize_names: true) }
+  let(:raw_content) { YAML.load_file(Rails.root.join("content/how_to_use.yml"), symbolize_names: true) }
   let(:name) { raw_content[:name].to_sym }
   let(:content) { described_class.find(name) }
 
@@ -35,4 +35,3 @@ RSpec.describe Content, type: :model do
     end
   end
 end
-

@@ -1,0 +1,39 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Cross-Site Scripting",
+      "warning_code": 2,
+      "fingerprint": "b6b4812546bba1eb136c08e74ca800b49b5779216a57df088fb0579088fe0728",
+      "check_name": "CrossSiteScripting",
+      "message": "Unescaped model attribute",
+      "file": "app/views/contents/show.html.erb",
+      "line": 5,
+      "link": "https://brakemanscanner.org/docs/warning_types/cross_site_scripting",
+      "code": "Content.find(params[:id]).to_html",
+      "render_path": [
+        {
+          "type": "controller",
+          "class": "ContentsController",
+          "method": "show",
+          "line": 8,
+          "file": "app/controllers/contents_controller.rb",
+          "rendered": {
+            "name": "contents/show",
+            "file": "app/views/contents/show.html.erb"
+          }
+        }
+      ],
+      "location": {
+        "type": "template",
+        "template": "contents/show"
+      },
+      "user_input": null,
+      "confidence": "High",
+      "cwe_id": [
+        79
+      ],
+      "note": "This is not user input - but input from a file in /content"
+    }
+  ],
+  "brakeman_version": "7.1.0"
+}

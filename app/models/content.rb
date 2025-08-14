@@ -2,7 +2,7 @@ class Content
   include ActiveModel::Model
   include Comparable
 
-  CONTENT_PATH = Rails.root.join("content/*.yml")
+  CONTENT_PATH = Rails.root.join("data/content/*.yml")
 
   class << self
     def all

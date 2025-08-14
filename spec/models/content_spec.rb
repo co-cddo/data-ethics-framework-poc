@@ -1,7 +1,10 @@
 require "rails_helper"
 
 RSpec.describe Content, type: :model do
-  let(:raw_content) { YAML.load_file(Rails.root.join("content/how_to_use.yml"), symbolize_names: true) }
+  let(:raw_content) do
+    path = Dir.glob(Rails.root.join("data/content/*.yml")).sample
+    YAML.load_file(path, symbolize_names: true)
+  end
   let(:name) { raw_content[:name].to_sym }
   let(:content) { described_class.find(name) }
 

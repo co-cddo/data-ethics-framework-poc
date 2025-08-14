@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :questionnaires, only: [] do
+    resources :questions, only: %i[show update]
+  end
   resources :contents, only: %i[show index]
 
   root "home#index"

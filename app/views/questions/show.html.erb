@@ -1,0 +1,24 @@
+<% content_for :title, "#{@questionnaire.heading} - #{@question.title}" %>
+
+<h1 class="govuk-heading-l"><%= @questionnaire.heading %></h1>
+
+<%= form_tag(questionnaire_question_path(questionnaire_id: @questionnaire.id, id: @question.id), method: :put) do %>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h2 class="govuk-fieldset__heading">
+         <%= @question.title %>
+        </h2>
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <% @question.answers.each do |name, question| %>
+          <div class="govuk-radios__item">
+            <%= radio_button_tag @question.name, name, class: "govuk-radios__input" %>
+            <%= label_tag name, question[:label], class: "govuk-label govuk-radios__label" %>
+          </div>
+        <% end %>
+      </div>
+    </fieldset>
+    <div class="govuk-!-margin-top-5"><%= submit_tag 'Submit', class: "govuk-button" %></div>
+  </div>
+<% end %>

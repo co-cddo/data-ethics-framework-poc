@@ -1,0 +1,68 @@
+name: practical_actions
+start: whatis_your_role
+heading: Practical actions
+questions:
+  what_is_your_role:
+    type: radio
+    title: What is your role?
+    answers:
+      project_manager_role:
+        label: Project owner/manager
+        next: project_manager_practical_actions
+      data_worker_role:
+        label: Work with data
+        next: data_worker_practical_actions
+      technician_role:
+        label: Responsible for the technical aspects of project
+        next: technician_practical_actions
+  project_manager_practical_actions:
+    type: checkbox
+    title: Project Owner/Manager practical actions
+    answers:
+      why_what_how:
+        label: Try to explain your project (‘why’, ‘what’, ‘how’) in plain language to a non-expert audience internally.
+               If you’re unable to articulate how the use of data and/or AI solves a defined problem, then you should consider
+               alternative solutions.
+      maintain_detailed_records:
+        label: Maintain detailed records of the project and the decisions that were made in its design. This could include how
+               the project delivers positive social outcomes for the public; what the user need is that it tries to address;
+               who the senior responsible owner of the project is; or how a relationship with a third party supplier was set up.
+      consider_accessible_info:
+        label: Consider where you can make information about a project or tool publicly accessible, for example on GitHub, in
+               blogs, or on GOV.UK or your organisation’s webpage.
+      atrs:
+        label: If you’re a central government department or an arm’s length body within scope, you’re required to use the
+               Algorithmic Transparency Recording Standard (ATRS). This means you must document information about any algorithmic
+               tools you use in decision-making processes and make it clearly accessible to the public. Where a tool does not
+               strictly fall within scope of the ATRS, it is still recommended practice to publish an ATRS record.
+  data_worker_practical_actions:
+    type: checkbox
+    title: Data Worker practical actions
+    answers:
+      maintain_detailed_records:
+        label: Maintain detailed records of all data sources used, as well as collection methods, licenses, and pre-processing
+               steps.
+      publish_dpia_eia:
+        label: Publish DPIAs and EIAs where possible. Further information on this can be found in the Fairness and Privacy
+               sections.
+  technician_practical_actions:
+    type: checkbox
+    title: Practical actions for those responsible for technical aspects
+    answers:
+      maintain_detailed_records:
+        label: Maintain a detailed record of all the design decisions and assumptions that have gone into the development of a
+               solution
+      create_and_update_datasheets:
+        label: Create and regularly update model cards or datasheets that explain the model's purpose, performance limitations,
+               and intended use cases.
+      publish_source_code:
+        label: If possible, publish your source code openly, for example on GitHub.
+      explain_algorithms:
+        label: Consider how explainable an algorithmic tool you are building is and try to build with explainability in mind.
+               Consider how important explainability is for the use case it is intended for. In some cases, there may be
+               trade-offs, for example between accuracy and explainability (e.g. deep learning methods are more accurate but
+               easily not explainable).
+      access_machine_learning_models:
+        label: Utilise technical methods for assessing the interpretability of machine learning models, such as SHAP (SHapley
+               Additive exPlanations) and LIME (Local Interpretable Model-Agnostic Explanations).
+

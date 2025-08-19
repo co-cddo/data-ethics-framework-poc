@@ -79,20 +79,7 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  primary: &primary_production
-    <<: *default
-    database: data_ethics_framework_poc_production
-    username: data_ethics_framework_poc
-    password: <%= ENV["DATA_ETHICS_FRAMEWORK_POC_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: data_ethics_framework_poc_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: data_ethics_framework_poc_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: data_ethics_framework_poc_production_cable
-    migrations_paths: db/cable_migrate
+  <<: *default
+  database: data_ethics_framework_poc_production
+  username: data_ethics_framework_poc
+  password: <%= ENV["DATA_ETHICS_FRAMEWORK_POC_DATABASE_PASSWORD"] %>

@@ -1,0 +1,233 @@
+name: transparency
+title: Transparency
+position: 20
+body: |
+  Transparency is the foundation of all other ethical principles. Being transparent allows for scrutiny of actions,
+  decisions and processes. It cultivates accountability and builds trust in the use of data and technology.
+
+  A lack of transparency might lead to:
+
+  - solutions being designed suboptimally – at worst leading to harmful outcomes
+  - insufficient accountability and no clear ways to appeal decisions of automated systems – which may result in public
+    distrust
+
+  The first data protection principle in the UK GDPR is that of 'lawfulness, fairness and transparency'. In the context
+  of data protection, transparent processing is about being clear, open and honest with people from the start about who
+  you are, how and why you use their personal information, and their rights.
+
+  What transparency means in practice
+  -----------------------------------
+
+  It can be helpful to think about:
+
+  - why you’re being transparent
+  - what you’re being transparent about
+  - to whom you’re being transparent
+
+  For why you’re being transparent, consider these questions:
+
+  - are you following a particular mandate or requirement to be transparent?
+  - are you trying to address topics such as safety, trust, accountability, scrutiny, reproducibility, transferability
+    or robustness?
+  - what are the potential consequences of not being transparent?
+  - how will your organisation balance the resources required to make material transparent with other competing
+    operational priorities?
+
+  For what you’re being transparent about, consider:
+
+  - the tools you’re using – for example, for data analysis or automated processes – and explaining the process or
+    context for how you use these tools
+  - publishing open data or source code
+  - explaining the factors that influence a system’s output
+
+  In terms of who you’re aiming to be transparent to, consider:
+
+  - internal transparency within your organisation – for example, record keeping for handover and continuity purposes
+  - cross-organisational transparency – for example, sharing case studies with other government departments
+  - transparency as part of oversight requirements – for example, being transparent to regulators or auditors
+  - transparency to directly affected individuals or defined groups – for example, explaining algorithm-assisted
+    decision making
+  - public transparency – for example, publishing information on GOV.UK
+
+  These considerations will help you identify the right content and level of transparency to use in each specific case.
+
+  For example, if you want to ensure a smooth handover of an in-house AI system –- so it remains safe, functional and
+  easy to maintain –- you might choose to share and discuss its technical details and source code. Or, if you’re
+  generating explanations of a system’s outcome to affected parties, you may adapt transparency information to include
+  simple logic-based explanations.
+
+  Transparency in the context of data
+  -----------------------------------
+
+  Data transparency is about communicating:
+
+  - where the data comes from
+  - how the data is collected, cleaned, used, stored, shared, analysed and interpreted
+  - the limitations of the data
+
+  This applies to the data itself, but also metadata (such as file format or author) and paradata (data about the data
+  collection process itself).
+
+  Being transparent about data can involve the following elements.
+
+  - **Open data.** Making data openly available can support trust and transparency by allowing others to replicate and
+    scrutinise published results. If data is non-sensitive, non-personal, and if data sharing agreements with the
+    supplier allow it, you should make the data open and assign it a digital object identifier (DOI).
+    - You can publish the data on [data.gov.uk](http://Data.gov.uk), following the
+      [Open Data Charter](https://www.gov.uk/government/publications/open-data-charter).
+      Scientists share data when publishing a paper on
+      [Figshare](https://figshare.com/) and [Datadryad](https://datadryad.org/).
+      This gives others access to the data and the code, so they can reproduce the analysis.
+    - You can publish data on Find open data and the [UK Data Archive](https://www.data-archive.ac.uk/).
+
+
+  - **Documentation about the provenance (collection or generation) of data.** If you’re collecting or generating data,
+    it’s important to be open about why, what and how (by which methods) data is being collected.
+
+
+  - **Documentation about any pre-processing the limitations of the data.** Discuss what pre-processing steps you’ve
+    taken to ensure adequate data quality. Disclose any limitations of the data, such as quality issues, missing or
+    incomplete data, or known errors.
+
+
+  - **Documentation about the way in which the data is used in a specific project.** When using data in a concrete
+  project, clearly communicate the problem domain, user need, project aims and value to relevant stakeholders. When
+  starting data analysis, you should be able to clearly explain the purpose and methodology of your analysis.
+
+
+  - **Documentation about data sharing and access.** Be open about who has access to the data, what data sharing
+    agreements are in place, and what the conditions for reuse are, such as licensing.
+
+
+  - **Data protection-related transparency.** Where personal data is being processed, you must comply with relevant
+    laws. You must carry out a data protection impact assessment (DPIA) before you process personal data when the
+    processing is likely to result in a high risk to the rights and freedoms of individuals.
+
+  > It’s good practice to publish your completed DPIA to demonstrate that you’re taking the appropriate precautions to
+  > protect personal data.
+
+  > This will build trust in your use of data and data-driven technologies. Explain data minimisation steps and
+  > safeguards in place for anonymisation or pseudonymisation.
+
+  Concepts such as data sheets or data set cards can be helpful in recording some of this information. Good examples
+  include [data sheets for data sets](https://arxiv.org/pdf/1803.09010) and variations of data set cards that have been
+  developed based on this approach, such as
+  [Google’s data cards](https://github.com/PAIR-code/datacardsplaybook/blob/main/templates/DataCardsExtendedTemplate.pdf).
+
+  Transparency in the context of AI and algorithmic tools
+  -------------------------------------------------------
+
+  Ensuring transparency and explainability can be complex in the context of AI and automated systems. Transparency can
+  be limited by ‘black box’ algorithms or proprietary commercial tools. Explainability may not be possible for certain
+  forms of machine learning, or may only be achievable at the cost of performance.
+
+  To be transparent in the context of AI and automated systems, you should consider the following concepts.
+
+  - **Technical transparency** is information about the technical operation of the AI system, such as the code used to
+  create the algorithms and the underlying data sets used to train the model.
+
+  - **Process transparency** is information about the design, development and deployment decisions and practices behind
+  your AI solutions, and the mechanisms used to demonstrate that the solution is responsible and trustworthy. You must
+  put in place robust reporting mechanisms, process-centred governance frameworks and AI assurance techniques to enable
+  process-based transparency.
+
+  **Outcome-based transparency and explainability** means the ability to clarify to any user using or impacted by a
+  service that utilises AI how the solution works and which factors influence its decision making and outputs. This
+  includes individual-level explanations of decisions, where this is requested.
+
+  ### Explainability in practice
+
+  For certain types of machine learning models, such as deep learning or large language models (LLMs), it can be
+  impossible to fully explain the logic behind an output or decision due to their ‘black box’ nature.
+
+  Before making technical or architectural decisions, you should assess whether explainability is necessary for your
+  project. This will help you avoid investing in inappropriate technology.
+
+  In other cases, where it’s impossible to understand or interpret the logic of the model, consider alternative methods
+  of explainability such as visualisation techniques or counterfactual explanations. The Information Commissioner’s
+  Office (ICO) has guidance on
+  [explaining decisions made with AI](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/artificial-intelligence/explaining-decisions-made-with-artificial-intelligence/).
+
+  #### Using the [Algorithmic Transparency Recording Standard (ATRS)](https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub)
+
+  All central government departments and arm’s length bodies that provide public or frontline services, or routinely
+  interact with the general public, must use the ATRS.
+
+  This involves being transparent about the algorithmic tools they use in decision making processes that have an effect
+  on the public. We also recommend the ATRS to other public sector bodies such as local government, although they are
+  not required to use it yet.
+
+  ### If you’re using a third-party supplier
+
+  Vendors of AI systems must be able to clearly explain:
+
+  - the steps they take to build tools
+  - the logic and assumptions built into their tools
+  - how their tools generate outputs
+
+  This explanation should include:
+
+  - the data used to train the AI model
+  - the function of the AI models
+  - the system’s intended purpose
+
+  Before entering into a contract, consider asking your supplier these questions:
+
+  - what is the source of the data?
+  - how have data sets been created?
+  - what data has the model been trained on?
+  - where third-party data has been used to train the AI, does the organisation have a valid and lawful basis for processing?
+  - are there any known biases?
+  - are there any issues likely to affect quality?
+
+  You should consider whether any tools that are being procured from a third party, and are intended to be used in
+  decision-making processes, fall within scope of the mandatory requirement to use the
+  [Algorithmic Transparency Recording Standard (ATRS)](https://www.gov.uk/government/collections/algorithmic-transparency-recording-standard-hub).
+  At the procurement stage, it’s helpful to ensure that the supplier is providing you with all the required transparency
+  information requested in the ATRS.
+
+  Use the [Responsible Handover Framework](https://senseaboutscience.org/responsible-handover-of-ai/) to identify the
+  information needed for a successful AI system handover from supplier to buyer.
+
+  Recommended actions
+  -------------------
+
+  ### If you’re the project owner or manager
+
+  - Explain your project in plain English. Try to explain the what, how and why of your project to a non-expert audience.
+    If you cannot articulate how the use of data or AI solves a defined problem, you should consider alternative
+    solutions.
+  - Maintain detailed records of the project. Include the decisions that were made in its design, for example:
+    - how the project delivers positive social outcomes for the public
+    - what the user need is that it tries to address
+    - who the senior responsible owner of the project is
+    - how a relationship with a third-party supplier was set up
+  - Make information publicly available. Consider where you can make information about a project or tool publicly
+    accessible – for example, on GitHub, in blogs or on GOV.UK or your organisation’s webpage.
+  - Use the ATRS. If you’re a central government department or an arm’s length body
+    [within scope](https://www.gov.uk/government/publications/algorithmic-transparency-recording-standard-mandatory-scope-and-exemptions-policy/algorithmic-transparency-recording-standard-atrs-mandatory-scope-and-exemptions-policy),
+    you must use the ATRS. This means you must document information about any algorithmic tools you use in
+    decision-making processes and make this clearly accessible to the public.
+    - We also recommend the ATRS to other public sector bodies, such as local government, that are not in scope yet.
+    - We recommend publishing an ATRS record even where a tool does not strictly fall within scope of the ATRS.
+
+  ### If you’re working with data
+
+  - Maintain detailed records of all data sources used. This should also include collection methods, licenses and
+    pre-processing steps.
+  - Publish DPIAs and EIAs where possible. Refer to the Fairness and Privacy sections for more information.
+
+  ### If you’re responsible for the technical aspects of a project
+
+  - Maintain detailed records of design decisions and assumptions. Include all the decisions and assumptions that have
+    gone into the development of a solution.
+  - Create and regularly update [model cards](https://modelcards.withgoogle.com) or data sheets that explain the model's
+    purpose, performance limitations and intended use cases.
+  - If possible, publish your source code openly, for example on GitHub.
+  - Consider how explainable an algorithmic tool you are building is and try to build with explainability in mind.
+    Consider how important explainability is for the use case it is intended for. In some cases, there may be trade-offs
+    – for example, between accuracy and explainability (if deep learning methods are more accurate but easily not
+    explainable).
+  - Utilise technical methods for assessing the interpretability of machine learning models, such as
+    [SHAP (SHapley Additive exPlanations)](https://shap.readthedocs.io/en/latest/) and
+    [LIME (Local Interpretable Model-Agnostic Explanations)](https://c3.ai/glossary/data-science/lime-local-interpretable-model-agnostic-explanations/).

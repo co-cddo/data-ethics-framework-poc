@@ -1,0 +1,147 @@
+name: accountability
+title: Accountability
+position: 30
+body: |
+  Accountability means that people and organisations are responsible for the technology they use and build. It involves
+  setting clear roles and responsibilities, and being transparent about decisions.
+
+  Being accountable helps keep people safe, and ensures that data and AI is used fairly and responsibly. A lack of
+  accountability can lead to:
+
+  - harm to people, such as unfair decisions
+  - legal risks and repercussions
+  - a loss of trust in organisations.
+
+  What accountability means in practice
+  -------------------------------------
+
+  To establish and support accountability across a data or AI project, you should:
+
+  - **set clear roles and responsibilities for your project.** This includes naming people who are responsible for
+  managing data, such as data owners, stewards and custodians.
+  - be transparent about decisions. This means you keep clear records to show how your data or AI system was designed,
+    developed and used. This helps others check that your work is trustworthy and meets legal and ethical standards.
+  - establish accessible feedback mechanisms. People affected by decisions made using algorithmic or AI tools should be
+    able to:
+    - understand how the decision was made
+    - challenge the outcome
+    - ask for it to be reviewed or corrected.
+  - **retain human oversight.** People must be able to monitor and influence how systems work, even when those systems
+    are partially or fully automated.
+
+  If your project uses personal data, you must meet your legal duties under the UK General Data Protection Regulation
+  (UK GDPR). This includes:
+
+  - being responsible for how personal data is used - Article 5(2)
+  - showing how you meet the data protection principles - Article 5(1)
+  - completing and documenting Data Protection Impact Assessments (DPIAs).
+
+  Your organisation’s Data Protection Officer (DPO) or information assurance team should be able to advise on your data
+  protection obligations.
+
+  ### Setting clear roles and responsibilities
+
+  You need strong oversight and clear responsibilities to make sure your data or AI project is accountable across its
+  lifecycle. You must set out who is responsible at each stage of the project. This includes naming:
+
+  - senior responsible owners
+  - risk owners
+  - data owners, stewards and custodians.
+
+  This is especially important for complex projects or those involving multiple suppliers, which is often the case with
+  AI projects. For project governance to be effective, it is essential to ensure that those accountable have appropriate
+  technical expertise and knowledge, and authority, to implement necessary changes.
+
+  ### Transparency and auditability
+
+  Your project team must ensure that every step of the process of designing and implementing your AI project is
+  accessible for audit, oversight, and review by appropriate parties.
+
+  To make sure AI and algorithmic systems can be audited or reviewed, teams must:
+
+  - record who is responsible for each part of the system, including suppliers
+  - keep information about where the data came from and how it was used - from data collection and preparation to
+    training, testing and use
+  - record decisions made during the development process
+  - keep clear records that show how the system was developed and tested.
+
+  This information should be easy to find and understandable to a range of stakeholders. For example, a dataset
+  factsheet can help explain how data was handled.
+
+  If you’re building an AI system, you should take steps to make sure that the system is explainable. For example, you
+  can explain why a model or algorithmic tool has produced a particular outcome. Refer to the Transparency section for
+  further guidance on explainability.
+
+  ### Establishing feedback mechanisms
+
+  Adhering to accountability means ensuring that those affected by the use of a data or AI system are able to provide
+  feedback, contest outcomes that are incorrect, and seek redress if they have been wronged by those outcomes.
+
+  You should create a clear mechanism for monitoring the ongoing use of your data or AI project, evaluating how it is
+  used, and provide a feedback loop where users and operators can identify issues and send them back to the development
+  team.
+
+  ### Maintaining human oversight
+
+  You should be clear about what decisions your project supports and whether any part of the decision-making process is
+  fully automated.
+
+  If your system includes automated processing, you must make sure there is appropriate human oversight. This includes:
+
+  - recording how much of the process is automated and how much is controlled by people
+  - naming the people responsible for oversight and for managing risks
+  - avoiding fully automated decisions where the outcome could significantly affect individuals or groups
+  - making sure a person makes the final decision in these cases.
+
+  In some use cases of AI, automated decision-making can be difficult to avoid. For example, it is likely impossible for
+  humans to review every conversational output of an LLM-based chatbot.
+
+  In cases like this, it is important that you weigh the risk of erroneous outputs and resulting harms against the
+  benefits of using the system.
+
+  In some cases where the risk of potential harm and erroneous outputs are high, the right choice is to not use the
+  system at all. In other cases, you may want to put mitigations in place, for example, providing easy access to human
+  agents if a chatbot is unable to help users.
+
+  ## Accountability if you’re using a third party supplier
+
+  If an AI system makes or supports a decision, the public organisation using it is responsible for the outcome.
+
+  If you buy an AI system from a supplier, you must:
+
+  - make sure the supplier understands their responsibilities
+  - agree what risks they must manage
+  - ask them to share information about how the system works
+
+  You should include these responsibilities in the contract.
+
+  - **product liability** -  suppliers may be liable if the system causes harm because it gives unsafe outcomes or fails
+  - **data liability** - if the system breaks data protection law or misuses data
+  - **algorithmic harm** - liability for discriminatory, biased, or unfair outcomes, particularly in public services (such as social welfare or policing).
+  - **security liability** - liability for damage caused by insufficient security measures or third-party manipulation.
+  - **failure to meet contract terms** - including penalties, clawback clauses, and potential contract termination.
+  - **insurance** - you can ask suppliers to have insurance that covers harm caused by AI.
+
+  Refer to the
+  [Buyer’s guidance on AI procurement](https://www.crowncommercial.gov.uk/downloadable-resource/request/67557/buyers-guidance-supporting-the-procurement-of-artificial-intelligence-via-ccs-agreements)
+  and [Guidelines for AI procurement](https://www.gov.uk/government/publications/guidelines-for-ai-procurement)
+  for further guidance on procuring AI technologies.
+
+  Recommended actions:
+  --------------------
+
+  - **Clarify legal responsibilities across the AI supply chain.** You should make sure that all parties involved in the
+    AI project life cycle, from vendors and technical teams to system users, are acting lawfully and understand their
+    respective legal obligations. Where AI is bought commercially, define detailed responsibilities and liability
+    contractually.
+  - **Be transparent about decisions.** Publish clear documentation explaining how your AI system works, including its
+    purpose, data sources, and decision logic. Make sure this information is accessible to both technical and
+    non-technical stakeholders.
+  - **Nominate a senior responsible owner (SRO)**, typically a senior decision-maker, who will be accountable for the
+    project.
+  - **Maintain human oversight.** Where AI is used in situations of high impact or risk, establish a human-in-the-loop
+    process to oversee and validate outputs and decisions. Make sure that these people can effectively identify risks
+    and intervene, where appropriate.
+  - **Take responsibility as an end-user.** You should assume responsibility for the outputs and decisions made by the
+    AI systems you use. This includes interactions with LLM-based tools, such as ChatGPT.
+

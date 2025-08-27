@@ -1,0 +1,13 @@
+<h1>Your answers</h1>
+
+<% @report.each do |questionnaire, questions| %>
+  <h2>Questionnaire: <%= questionnaire.to_s.titleize %></h2>
+  <ul>
+    <% questions.each do |question, answer| %>
+      <li>
+        To the question <em><%= question.to_s.humanize %></em>
+        you answered <em><%= answer.to_s.humanize %></em>.
+      </li>
+    <% end %>
+  </ul>
+<% end %>

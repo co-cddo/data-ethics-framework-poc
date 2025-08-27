@@ -1,7 +1,8 @@
 require "rails_helper"
 
 RSpec.describe "Contents", type: :request do
-  let(:content) { Content.find(:how_to_use) }
+  let(:name) { Content.all.keys.first }
+  let(:content) { Content.find(name) }
 
   describe "GET /index" do
     it "returns http success" do
@@ -17,12 +18,12 @@ RSpec.describe "Contents", type: :request do
 
   describe "GET /show" do
     it "returns http success" do
-      get content_path(:how_to_use)
+      get content_path(name)
       expect(response).to have_http_status(:success)
     end
 
     it "includes the content" do
-      get content_path(:how_to_use)
+      get content_path(name)
       expect(response.body).to include(content.to_html)
     end
   end

@@ -37,6 +37,11 @@
           href: contents_path,
           active: current_page?(contents_path)
         )
+        header.with_navigation_item(
+          text: 'Questionnaire',
+          href: questionnaire_question_path(questionnaire_id: :practical_actions, id: :what_is_your_role),
+          active: current_page?(questionnaire_question_path(questionnaire_id: :practical_actions, id: :what_is_your_role))
+        )
       end
     %>
 

@@ -33,7 +33,7 @@ gem "rubocop-govuk", require: false
 gem "govuk-components"
 
 # GOV.UK markdown
-gem "govspeak"
+gem "govuk_markdown"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

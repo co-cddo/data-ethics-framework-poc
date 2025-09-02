@@ -33,9 +33,8 @@ class Content
     name.to_sym
   end
 
-  delegate :to_html, to: :document
-  def document
-    @document ||= Govspeak::Document.new(body)
+  def to_html
+    GovukMarkdown.render(body)
   end
 
   def next

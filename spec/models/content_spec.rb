@@ -31,7 +31,7 @@ RSpec.describe Content, type: :model do
   end
 
   describe "#to_html" do
-    let(:html) { Govspeak::Document.new(raw_content[:body]).to_html }
+    let(:html) { GovukMarkdown.render(raw_content[:body]) }
 
     it "returns the content body as html" do
       expect(content.to_html).to eq(html)

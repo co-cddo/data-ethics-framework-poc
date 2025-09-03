@@ -1,0 +1,105 @@
+name: ethics_self_assessment
+heading: Ethics self-assessment
+questions:
+  developing_ai_tool:
+    type: radio
+    title: Are you developing an AI/algorithmic tool?
+    answers:
+      'true':
+        label: 'yes'
+        next: tool_expected_to_be_public_facing
+      'false':
+        label: 'no'
+        next: tool_expected_to_be_public_facing
+  tool_expected_to_be_public_facing:
+    type: radio
+    title: Is the tool expected to be public-facing?
+    answers:
+      'true':
+        label: 'yes'
+        next: affect_large_number_of_individuals
+      'false':
+        label: 'no'
+        next: affect_large_number_of_individuals
+  affect_large_number_of_individuals:
+    type: radio
+    title: Will or does the project or tool affect a large number of individuals or organisations?
+    answers:
+      'true':
+        label: yes – the project is expected to affect a large number of individuals or organisations
+        next: impact_individuals_organisations_or_groups
+      maybe:
+        label: maybe – it is unclear how many people or entities will be affected
+        next: impact_individuals_organisations_or_groups
+      'false':
+        label: no – the project is expected to affect only a small or limited number of individuals or organisations
+        next: impact_individuals_organisations_or_groups
+  impact_individuals_organisations_or_groups:
+    title: Will the project have an impact on individuals, organisations or groups? (for example legal, economic, or eligibility-related impacts).
+    answers:
+      'true':
+        label: yes – the project will materially affect individuals, organisations, or groups
+        next: statistical_or_algorithmic_modelling
+      maybe:
+        label: maybe – it is unclear at this stage whether the project will have a material impact
+        next: statistical_or_algorithmic_modelling
+      'false':
+        label: no – the project is not expected to materially affect any individuals, organisations, or groups
+        next: statistical_or_algorithmic_modelling
+  statistical_or_algorithmic_modelling:
+    title: Does the project involve statistical modelling or algorithmic methods that inform or make decisions that affect individuals?
+    answers:
+      'true':
+        label: yes – the project involves statistical modelling or algorithms that inform or support decision-making
+        next: personal_or_sensitive_data
+      maybe:
+        label: maybe - it is unclear whether automation plays a significant role in the decision-making process
+        next: personal_or_sensitive_data
+      'false':
+        label: no – the project does not involve any form of decision support or automation
+        next: personal_or_sensitive_data
+  personal_or_sensitive_data:
+    title: Does the project involve any personal, sensitive, or special category data (for example, health data or biometrics)?
+    answers:
+      'true':
+        label: yes – the project involves personal, sensitive, or special category data (for example health, ethnicity, biometrics).
+        next: clear_accountability
+      unclear:
+        label: unclear – it is unclear whether the project involves any special category data.
+        next: clear_accountability
+      'false':
+        label: no – the project does not involve personal, sensitive, or special category data.
+        next: clear_accountability
+  clear_accountability:
+    title: Is it clear who is accountable for the decisions made in this project?
+    answers:
+      'true':
+        label: yes – roles and responsibilities are clearly defined and accountability is in place
+        next: meaningful_communication_of_outcomes
+      maybe:
+        label: maybe – I am unsure about whether the right accountability structures are in place
+        next: meaningful_communication_of_outcomes
+      'false':
+        label: no – it is unclear who is responsible for key decisions in the project
+        next: meaningful_communication_of_outcomes
+  meaningful_communication_of_outcomes:
+    title: Is there a plan for meaningful communication of the project or system’s purpose, design and outcomes?
+    answers:
+      'true':
+        label: yes – There is a clear plan for communicating the project or system’s purpose, design, and use to stakeholders.
+        next: can_rational_be_explained
+      maybe:
+        label: maybe – it is unclear whether a communication plan exists.
+        next: can_rational_be_explained
+      'false':
+        label: no – there is currently no plan to ensure transparency or public understanding of the system.
+        next: can_rational_be_explained
+  can_rational_be_explained:
+    title: Can the rationale for key decisions and outputs be explained to users and affected individuals?
+    answers:
+      'true':
+        label: yes – the rationale for decisions or outputs can be clearly explained to users and those affected, and there are clear mechanisms in place for this
+      maybe:
+        label: maybe – it is unclear whether decisions or outputs can be clearly explained
+      'false':
+        label: no – the project’s decisions or outputs cannot be clearly explained

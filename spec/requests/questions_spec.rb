@@ -51,5 +51,16 @@ RSpec.describe "Quesionnaire questons", type: :request do
         expect(response).to redirect_to(questionnaire_questions_path(questionnaire_id: questionnaire.id))
       end
     end
+
+    context "answer has a score" do
+      let(:questionnaire) { Questionnaire.find(:ethics_self_assessment) }
+      let(:question) { questionnaire.question(:affect_large_number_of_individuals) }
+      let(:question_answer) { question.answers[answer] }
+
+      it "stores the score in session" do
+        patch_question
+        expect(session[:score]).to eq(question_answer[:score])
+      end
+    end
   end
 end

@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @report = session[:answers].dup
+    @score = session[:score].dup
   end
 
   def show
@@ -10,9 +11,11 @@ class QuestionsController < ApplicationController
   def update
     session[:answers] ||= {}
     session[:answers][questionnaire.id.to_s] ||= {}
-    session[:answers][questionnaire.id.to_s][question.id.to_s] = answer
+    session[:answers][questionnaire.id.to_s][question.id.to_s] = selected_answer
+    session[:score] ||= 0
+    session[:score] += answer[:score] if answer[:score].present?
 
-    next_question = question.answers.dig(answer.to_sym, :next)
+    next_question = answer[:next]
     path = if next_question
              questionnaire_question_path(questionnaire_id: questionnaire.id, id: next_question)
            else
@@ -32,6 +35,10 @@ private
   end
 
   def answer
+    question.answers[selected_answer.to_sym]
+  end
+
+  def selected_answer
     params[question.id]
   end
 end

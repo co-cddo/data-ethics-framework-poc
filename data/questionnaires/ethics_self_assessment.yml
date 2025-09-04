@@ -42,7 +42,7 @@ questions:
     answers:
       'true':
         label: yes – the project will materially affect individuals, organisations, or groups
-        next: statistical_or_algorithmic_modelling
+        next: discovery_project_scoping_planning
         score: 2
       maybe:
         label: maybe – it is unclear at this stage whether the project will have a material impact
@@ -57,7 +57,7 @@ questions:
     answers:
       'true':
         label: yes – the project involves statistical modelling or algorithms that inform or support decision-making
-        next: personal_or_sensitive_data
+        next: discovery_project_scoping_planning
         score: 2
       maybe:
         label: maybe - it is unclear whether automation plays a significant role in the decision-making process
@@ -72,7 +72,7 @@ questions:
     answers:
       'true':
         label: yes – the project involves personal, sensitive, or special category data (for example health, ethnicity, biometrics).
-        next: clear_accountability
+        next: discovery_project_scoping_planning
         score: 2
       unclear:
         label: unclear – it is unclear whether the project involves any special category data.
@@ -124,3 +124,10 @@ questions:
       'false':
         label: no – the project’s decisions or outputs cannot be clearly explained
         score: 0
+  discovery_project_scoping_planning:
+    title: Tier 2 ethics assessment - Holding page
+    answers:
+      foo:
+        label: Foo
+      bar:
+        label: Bar

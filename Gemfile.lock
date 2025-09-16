@@ -131,7 +131,7 @@ GEM
     google-protobuf (4.32.0-x86_64-linux-musl)
       bigdecimal
       rake (>= 13)
-    govuk-components (5.11.2)
+    govuk-components (5.11.3)
       html-attributes-utils (~> 1.0.0, >= 1.0.0)
       pagy (>= 6, < 10)
       view_component (>= 4.0, < 4.1)

@@ -1,2 +1,10 @@
 // Sassy
 @import "../../../node_modules/govuk-frontend/dist/govuk/all";
+
+@media print
+{
+    .no-print, .no-print *, .govuk-header__navigation-list
+    {
+        display: none !important;
+    }
+}

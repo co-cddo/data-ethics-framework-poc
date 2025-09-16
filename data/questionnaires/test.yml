@@ -1,0 +1,33 @@
+name: test
+heading: Test data
+questions:
+  one:
+    type: radio
+    title: Question One
+    answers:
+      a:
+        label: A
+        next: two
+      b:
+        label: B
+        next: two
+  two:
+    type: radio
+    title: Question Two
+    answers:
+      x:
+        label: X
+        score: 1
+      y:
+        label: 'Y'
+        score: 2
+  redirect_next_questionnaire:
+    type: radio
+    title: Redirect to next questionnaire
+    answers:
+      redirect:
+        label: Redirect
+        next: ethics_self_assessment/developing_ai_tool
+      simple_next:
+        label: Simple next
+        next: one

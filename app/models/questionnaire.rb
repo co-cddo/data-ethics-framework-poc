@@ -27,6 +27,8 @@ class Questionnaire
 
   def question(name)
     data = questions[name.to_sym]
+    raise "Question '#{name}'' not found in questionnaire '#{id}'" if data.blank?
+
     Question.new(**data.merge(name:))
   end
 

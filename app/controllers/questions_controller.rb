@@ -17,7 +17,7 @@ class QuestionsController < ApplicationController
 
     next_question = answer[:next]
     path = if next_question
-             questionnaire_question_path(questionnaire_id: questionnaire.id, id: next_question)
+             next_question_path
            else
              questionnaire_questions_path(questionnaire_id: questionnaire.id)
            end
@@ -40,5 +40,20 @@ private
 
   def selected_answer
     params[question.id]
+  end
+
+  # if next is in form "one/two" next is to questionnaire one, question two
+  # if next is in form "three" next is to question three of current questionnaire
+  def next_question_path
+    next_path = answer[:next]
+    return if next_path.blank?
+
+    elements = next_path.split("/")
+    elements.unshift(questionnaire.id) if elements.size == 1
+
+    questionnaire_question_path(
+      questionnaire_id: elements[0],
+      id: elements[1],
+    )
   end
 end

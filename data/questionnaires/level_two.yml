@@ -1,0 +1,10 @@
+name: level_two
+heading: Tier 2 ethics assessment
+questions:
+  discovery_project_scoping_planning:
+    title: Holding page
+    answers:
+      foo:
+        label: Foo
+      bar:
+        label: Bar

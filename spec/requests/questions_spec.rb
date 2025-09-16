@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Quesionnaire questons", type: :request do
   let(:raw) do
-    path = Dir.glob(Rails.root.join("data/questionnaires/*.yml")).sample
+    path = Rails.root.join("data/questionnaires/test.yml")
     YAML.load_file(path, symbolize_names: true)
   end
   let(:name) { raw[:questions].keys.sample }
@@ -26,14 +26,14 @@ RSpec.describe "Quesionnaire questons", type: :request do
       patch questionnaire_question_path(questionnaire_id: questionnaire.id, id: question.id), params: { question.name => answer }
     end
     let(:answer) { question.answers.keys.first }
+
     it "stores the answer in session" do
       patch_question
       expect(session[:answers].dig(questionnaire.id.to_s, question.id.to_s)).to eq(answer.to_s)
     end
 
     context "answers have next" do
-      let(:questionnaire) { Questionnaire.find(:practical_actions) }
-      let(:question) { questionnaire.question(:what_is_your_role) }
+      let(:question) { questionnaire.question(:one) }
 
       it "redirects to next question" do
         patch_question
@@ -43,8 +43,7 @@ RSpec.describe "Quesionnaire questons", type: :request do
     end
 
     context "answers have no next" do
-      let(:questionnaire) { Questionnaire.find(:practical_actions) }
-      let(:question) { questionnaire.question(:technician_practical_actions) }
+      let(:question) { questionnaire.question(:two) }
 
       it "redirects to next question" do
         patch_question
@@ -52,9 +51,18 @@ RSpec.describe "Quesionnaire questons", type: :request do
       end
     end
 
+    context "answer's next is to another questionnaire" do
+      let(:question) { questionnaire.question(:redirect_next_questionnaire) }
+      let(:answer) { :redirect }
+
+      it "redirects to the question on the other questionnaire" do
+        patch_question
+        expect(response).to redirect_to(questionnaire_question_path(questionnaire_id: :ethics_self_assessment, id: :developing_ai_tool))
+      end
+    end
+
     context "answer has a score" do
-      let(:questionnaire) { Questionnaire.find(:ethics_self_assessment) }
-      let(:question) { questionnaire.question(:affect_large_number_of_individuals) }
+      let(:question) { questionnaire.question(:two) }
       let(:question_answer) { question.answers[answer] }
 
       it "stores the score in session" do

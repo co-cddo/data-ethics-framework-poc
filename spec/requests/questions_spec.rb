@@ -43,9 +43,10 @@ RSpec.describe "Quesionnaire questons", type: :request do
     end
 
     context "answers have no next" do
-      let(:question) { questionnaire.question(:two) }
+      let(:question) { questionnaire.question(:redirect_to_content_or_results) }
+      let(:answer) { :results }
 
-      it "redirects to next question" do
+      it "redirects to results page" do
         patch_question
         expect(response).to redirect_to(questionnaire_questions_path(questionnaire_id: questionnaire.id))
       end
@@ -58,6 +59,16 @@ RSpec.describe "Quesionnaire questons", type: :request do
       it "redirects to the question on the other questionnaire" do
         patch_question
         expect(response).to redirect_to(questionnaire_question_path(questionnaire_id: :ethics_self_assessment, id: :developing_ai_tool))
+      end
+    end
+
+    context "answer's next is a content page" do
+      let(:question) { questionnaire.question(:redirect_to_content_or_results) }
+      let(:answer) { :content }
+
+      it "reditects to a content page" do
+        patch_question
+        expect(response).to redirect_to(content_path(:transparency))
       end
     end
 

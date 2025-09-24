@@ -18,9 +18,21 @@ questions:
       x:
         label: X
         score: 1
+        next: redirect_to_content_or_results
       y:
         label: 'Y'
         score: 2
+        next: redirect_to_content_or_results
+  redirect_to_content_or_results:
+    type: radio
+    title: Do you want to be Redirect to content
+    answers:
+      content:
+        label: 'Yes'
+        next: content/transparency
+      results:
+        label: 'No'
+
   redirect_next_questionnaire:
     type: radio
     title: Redirect to next questionnaire

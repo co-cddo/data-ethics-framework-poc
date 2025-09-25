@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :questionnaires, only: [] do
+  resources :questionnaires, only: %i[show update] do
     resources :questions, only: %i[show update index]
   end
   resources :contents, only: %i[show index]

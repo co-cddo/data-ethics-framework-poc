@@ -29,7 +29,12 @@ class Questionnaire
     data = questions[name.to_sym]
     raise "Question '#{name}'' not found in questionnaire '#{id}'" if data.blank?
 
-    Question.new(**data.merge(name:))
+    Question.new(data.merge(name:))
+  end
+
+  # Raw questions is a hash with names as keys
+  def question_objects
+    questions.map { |name, data| Question.new(data.merge(name:)) }
   end
 
   def <=>(other)
@@ -39,7 +44,7 @@ class Questionnaire
   class Question
     include ActiveModel::Model
 
-    attr_accessor :name, :type, :title, :answers
+    attr_accessor :name, :type, :title, :answers, :hint, :next
 
     def id
       name.to_sym

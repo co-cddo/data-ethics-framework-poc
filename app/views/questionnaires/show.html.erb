@@ -2,22 +2,8 @@
 
 <%= form_tag(questionnaire_path(id: @questionnaire.id), method: :put) do %>
   <div class="govuk-form-group">
-    <% @questionnaire.questions.each do |title, question| %>
-      <fieldset class="govuk-fieldset govuk-!-static-margin-bottom-5" aria-describedby="waste-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h2 class="govuk-fieldset__heading">
-           <%= question[:title] %>
-          </h2>
-        </legend>
-        <div class="govuk-radios" data-module="govuk-radios">
-          <% question[:answers].each do |name, config| %>
-            <div class="govuk-radios__item">
-              <%= radio_button_tag title, name, class: "govuk-radios__input" %>
-              <%= label_tag name, config[:label], class: "govuk-label govuk-radios__label" %>
-            </div>
-          <% end %>
-        </div>
-      </fieldset>
+    <% @questionnaire.question_objects.each do |question| %>
+      <%= render question_partial(question), question: question %>
     <% end %>
     <div class="govuk-!-margin-top-5"><%= submit_tag 'Submit', class: "govuk-button" %></div>
   </div>

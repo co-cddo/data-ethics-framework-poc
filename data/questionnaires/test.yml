@@ -32,7 +32,6 @@ questions:
         next: content/transparency
       results:
         label: 'No'
-
   redirect_next_questionnaire:
     type: radio
     title: Redirect to next questionnaire
@@ -43,3 +42,9 @@ questions:
       simple_next:
         label: Simple next
         next: one
+  text_input:
+    type: text
+    title: This is a text input
+    hint: This is a hint
+    next: redirect_to_content_or_results
+

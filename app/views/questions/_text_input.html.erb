@@ -1,0 +1,7 @@
+<h2 class="govuk-label-wrapper">
+  <%= label_tag question.name, question.title, class: "govuk-label govuk-label--l" %>
+</h2>
+<div id="<%= question.name %>-hint" class="govuk-hint">
+  <%= question.hint %>
+</div>
+<%= textarea_tag question.name, session[question.id], class: "govuk-textarea" %>

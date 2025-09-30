@@ -81,5 +81,20 @@ RSpec.describe "Quesionnaire questons", type: :request do
         expect(session[:score]).to eq(question_answer[:score])
       end
     end
+
+    context "question uses text input" do
+      let(:question) { questionnaire.question(:text_input) }
+      let(:answer) { Faker::Lorem.paragraph }
+
+      it "stores the answer in session" do
+        patch_question
+        expect(session[:answers].dig(questionnaire.id.to_s, question.id.to_s)).to eq(answer)
+      end
+
+      it "redirects to question next" do
+        patch_question
+        expect(response).to redirect_to(questionnaire_question_path(questionnaire_id: questionnaire.id, id: question.next))
+      end
+    end
   end
 end

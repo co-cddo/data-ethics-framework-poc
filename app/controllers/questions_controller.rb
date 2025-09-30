@@ -29,7 +29,7 @@ private
   end
 
   def answer
-    question.answers[selected_answer.to_sym]
+    question.answers[selected_answer.to_sym] if question.answers.present?
   end
 
   def selected_answer
@@ -39,7 +39,7 @@ private
   # if next is in form "one/two" next is to questionnaire one, question two
   # if next is in form "three" next is to question three of current questionnaire
   def next_question_path
-    next_path = answer && answer[:next]
+    next_path = (answer && answer[:next]) || question.next.presence
     return if next_path.blank?
 
     elements = next_path.split("/")

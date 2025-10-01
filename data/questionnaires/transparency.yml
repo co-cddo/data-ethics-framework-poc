@@ -1,0 +1,33 @@
+name: transparency
+heading: 'Level 1 - Ethics self-assessment : Transparency'
+questions:
+  meaningful_communication_of_outcomes:
+    title: Has there been meaningful communication of the project or system’s purpose, design and outcomes to relevant and impacted parties, or is there a plan for this in the future?
+    answers:
+      'true':
+        label: yes – there has been or there is a clear plan for communicating the project or system’s purpose, design, and use to stakeholders.
+        next: can_rational_be_explained
+        score: 2
+      maybe:
+        label: maybe – it is unclear whether a communication plan exists.
+        next: can_rational_be_explained
+        score: 1
+      'false':
+        label: no – there hasn’t been any meaningful communication about the project or system and there is currently no plan in place.
+        next: can_rational_be_explained
+        score: 0
+  can_rational_be_explained:
+    title: In cases where there is material impact, can the rationale for key decisions and outputs be explained to users and affected individuals in a way that is understandable by those affected?
+    answers:
+      'true':
+        label: yes – the rationale for decisions or outputs can be clearly explained to users and those affected, and there are clear mechanisms in place for this.
+        next: accountability/accountability
+        score: 2
+      maybe:
+        label: maybe – it is unclear whether decisions or outputs can be clearly explained.
+        next: accountability/accountability
+        score: 1
+      'false':
+        label: no – the project’s decisions or outputs cannot be clearly explained.
+        next: accountability/accountability
+        score: 0

@@ -1,10 +1,59 @@
 name: level_two
 heading: Tier 2 ethics assessment
 questions:
-  discovery_project_scoping_planning:
-    title: Holding page
+  the_problem_to_be_solved:
+    title: Describe the problem you’re trying to solve in non-technical terms
+    type: text
+    next: project_purpose_and_user_need
+  project_purpose_and_user_need:
+    title: Describe the project purpose and user need
+    type: text
+    next: gdpr
+  gdpr:
+    title: Is personal or sensitive data being used, and is it protected in accordance with the UK GDPR?
+    type: radio
     answers:
-      foo:
-        label: Foo
-      bar:
-        label: Bar
+      in_accordance:
+        label: 'Yes'
+        next: consulted_dpo
+      not_in_accordance:
+        label: 'No'
+        next: consulted_dpo
+  consulted_dpo:
+    title: Have you consulted your organisation’s Data Protection Officer (DPO)
+    type: radio
+    answers:
+      'yes':
+        label: 'Yes'
+        next: conducted_dpia
+      'no':
+        label: 'No'
+        next: conducted_dpia
+  conducted_dpia:
+    title: Have you conducted a Data Protection Impact Assessment (DPIA)?
+    type: radio
+    answers:
+      'yes':
+        label: 'Yes'
+        next: dpia_risks_identified
+      'no':
+        label: 'No'
+        next: data_sharing_agreements_in_place
+  dpia_risks_identified:
+    title: What risks were identified?
+    type: text
+    next: data_sharing_agreements_in_place
+  data_sharing_agreements_in_place:
+    title: Are appropriate data sharing agreements in place if data is being shared with other organisations?
+    type: radio
+    answers:
+      'yes':
+        label: 'Yes'
+        next: governance_structures_in_place
+      'no':
+        label: 'No'
+        next: governance_structures_in_place
+  governance_structures_in_place:
+    title: What governance structures are in place to support the safe, effective and responsible implementation of the project?
+    type: text
+

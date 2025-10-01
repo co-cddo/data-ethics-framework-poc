@@ -38,7 +38,7 @@ questions:
     answers:
       redirect:
         label: Redirect
-        next: ethics_self_assessment/developing_ai_tool
+        next: ethics_self_assessment/affect_large_number_of_individuals
       simple_next:
         label: Simple next
         next: one

@@ -1,0 +1,19 @@
+name: safety
+heading: 'Level 1 - Ethics self-assessment : Safety'
+questions:
+  significant_harm:
+    title: Could the system or data be breached, misused or repurposed in ways that could result in significant harm to individuals, groups, or national security?
+    type: radio
+    answers:
+      'true':
+        label: yes – the system or data could be breached, misused or repurposed in ways that could result in significant harm to individuals, groups, or national security
+        next:
+        score: 2
+      maybe:
+        label: maybe – it is unclear whether breaches, misuse, or repurposing of the system or data are probably or would lead to significant harm
+        next:
+        score: 1
+      'false':
+        label: no – breach or misuse of the system or data is unlikely, and if that happened, little harm is expected to result from it.
+        next:
+        score: 0

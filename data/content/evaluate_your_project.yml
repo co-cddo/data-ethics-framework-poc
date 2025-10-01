@@ -1,0 +1,28 @@
+name: evaluate_your_project
+title: Evaluate your project using the Data and AI Ethics Assessment
+position: 100
+body: |
+  The ethics self-assessment tool provides a structured set of questions to help teams identify and reflect on the ethical
+  risks of their projects. It is aimed at individuals or teams working with data, data-driven tools, algorithmic tools, or
+  AI, as part of delivering a project or service. End users, such as caseworkers, may also find this assessment and
+  accompanying guidance useful, although the primary focus is on delivery teams.
+
+  The Level 1 assessment is a short risk and impact assessment. It provides a recommendation as to whether teams should
+  complete a Level 2 assessment based on a project’s estimated risk level. It is strongly recommended that any individual
+  or team working on a data or AI project completes at a minimum the Level 1 assessment.
+
+  Using this tool, teams can:
+
+  - identify ethical risks across the project lifecycle
+  - document their assessment to support project transparency
+  - explore and discuss mitigation strategies to address identified risks
+
+  The assessment is intended to prompt you to reflect on how your project is meeting ethical best practice. It is not intended
+  to provide assurance or sign-off for a project.
+
+  You can fill in the assessment during different stages of a project. We recommend using the assessment at a minimum during the
+  scoping and planning phase of a project as well as before live deployment.
+
+  ## Start the assessment
+
+  [Proceed to: Level 1 - Ethics self-assessment](/questionnaires/ethics_self_assessment/questions/affect_large_number_of_individuals)

@@ -1,0 +1,37 @@
+name: fairness
+heading: 'Level 1 - Ethics self-assessment : Fairness'
+questions:
+  disproportionately_affect_marginal_groups:
+    title: Will this project focus on or disproportionately affect vulnerable or marginalised groups or people with protected characteristics?
+    type: radio
+    answers:
+      'true':
+        label: yes – the project targets or is likely to disproportionately affect vulnerable or marginalised groups.
+        next: societal_bias_tools
+        score: 2
+      maybe:
+        label: maybe / unclear – it is uncertain whether these groups will be significantly affected.
+        next: societal_bias_tools
+        score: 1
+      'false':
+        label: no – the project is not expected to disproportionately affect any vulnerable or marginalised groups.
+        next: societal_bias_tools
+        score: 0
+  societal_bias_tools:
+    title: Could the data or algorithmic tools used produce, replicate or amplify societal biases?
+    type: radio
+    answers:
+      'true':
+        label: yes – there is a clear risk that this project could replicate or exacerbate existing societal biases.
+        next: privacy/personal_or_sensitive_data
+        score: 2
+      maybe:
+        label: maybe – the risk of bias is unclear or has not yet been assessed.
+        next: privacy/personal_or_sensitive_data
+        score: 1
+      'false':
+        label: no – there is no expected risk of replicating or amplifying societal biases.
+        next: privacy/personal_or_sensitive_data
+        score: 0
+
+

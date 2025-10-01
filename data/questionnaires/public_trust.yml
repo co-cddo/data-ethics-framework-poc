@@ -1,0 +1,19 @@
+name: public_trust
+heading: 'Level 1 - Ethics self-assessment : Public Trust'
+questions:
+  intense_scrutiny:
+    title: Is the project within an area of intense public or legal scrutiny, has parallels to controversial projects or could negatively affect public trust in government or public services?
+    type: radio
+    answers:
+      'true':
+        label: yes – the project is in an area of intense public scrutiny, has parallels with controversial projects or could negatively affect public trust in government or public services.
+        score: 2
+        next: transparency/meaningful_communication_of_outcomes
+      maybe:
+        label: maybe – it is unclear whether this project has those parallels or could impact public trust.
+        score: 1
+        next: transparency/meaningful_communication_of_outcomes
+      'false':
+        label: no – the project is not in such an area and is unlikely to negatively affect public trust or confidence.
+        score: 0
+        next: transparency/meaningful_communication_of_outcomes

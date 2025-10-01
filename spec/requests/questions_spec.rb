@@ -58,7 +58,7 @@ RSpec.describe "Quesionnaire questons", type: :request do
 
       it "redirects to the question on the other questionnaire" do
         patch_question
-        expect(response).to redirect_to(questionnaire_question_path(questionnaire_id: :ethics_self_assessment, id: :developing_ai_tool))
+        expect(response).to redirect_to(questionnaire_question_path(questionnaire_id: :ethics_self_assessment, id: :affect_large_number_of_individuals))
       end
     end
 

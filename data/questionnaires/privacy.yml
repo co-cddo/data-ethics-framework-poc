@@ -1,0 +1,18 @@
+name: privacy
+heading: 'Level 1 - Ethics self-assessment : Privacy'
+questions:
+  personal_or_sensitive_data:
+    title: Does the project involve any personal, sensitive, or special category data (for example, health data or biometrics)?
+    answers:
+      'true':
+        label: yes – the project involves personal, sensitive, or special category data (for example health, ethnicity, biometrics).
+        next: content/level_two
+        score: 2
+      unclear:
+        label: unclear – it is unclear whether the project involves any special category data.
+        next: safety/significant_harm
+        score: 1
+      'false':
+        label: no – the project does not involve personal, sensitive, or special category data.
+        next: safety/significant_harm
+        score: 0

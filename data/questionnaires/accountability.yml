@@ -1,0 +1,19 @@
+name: accountability
+heading: 'Level 1 - Ethics self-assessment : Accountability'
+questions:
+  accountability:
+    title: Does the nature of an output or decision suggest that there should be appeal or redress mechanisms in place?
+    type: radio
+    answers:
+      'true':
+        label: yes – given how the project will impact individuals, it seems that routes for appeal or redress are necessary.
+        next: fairness/disproportionately_affect_marginal_groups
+        score: 2
+      maybe:
+        label: maybe – it is unclear whether mechanisms for appeal and redress are needed.
+        next: fairness/disproportionately_affect_marginal_groups
+        score: 1
+      'false':
+        label: no – there is no need for appeal or redress mechanisms due to the nature of the project.
+        next: fairness/disproportionately_affect_marginal_groups
+        score: 0

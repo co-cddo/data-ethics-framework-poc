@@ -4,10 +4,12 @@ questions:
   involving_affected_groups:
     title: How are you involving affected groups in the planning, design and development process?
     type: text
+    tags: Fairness
     next: expert_consultation
   expert_consultation:
     title: Have you or are you planning to consult with civil society and domain experts?
     type: radio
+    tags: Fairness,Societal Impact
     answers:
       'yes':
         label: "Yes"
@@ -18,10 +20,12 @@ questions:
   lessons_from_expert_consultation:
     title: What did you learn from these groups? What potential risks and opportunities have you recorded?
     type: text
+    tags: Fairness,Societal Impact
     next: public_consultation
   public_consultation:
     title: Have you or are you planning to run a public consultation or engagement exercise?
     type: radio
+    tags: Fairness,Societal Impact
     answers:
       'yes':
         label: "Yes"
@@ -29,7 +33,8 @@ questions:
       'no':
         label: "No"
   lessons_from_public_consultation:
-    title: If yes, what did you learn from this engagement? What potential risks and opportunities have you recorded?
+    title: What did you learn from this engagement? What potential risks and opportunities have you recorded?
+    tags: Fairness,Societal Impact
     type: text
 
 

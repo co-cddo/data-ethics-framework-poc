@@ -44,10 +44,31 @@ class Questionnaire
   class Question
     include ActiveModel::Model
 
-    attr_accessor :name, :type, :title, :answers, :hint, :next
+    COLOURS = {
+      privacy: "red",
+      accountability: "orange",
+      safety: "purple",
+      fairness: "yellow",
+      societal_impact: "turquoise",
+      transparency: "blue",
+      sustainability: "green",
+    }.freeze
+
+    attr_accessor :name, :type, :title, :answers, :hint, :next, :tags
 
     def id
       name.to_sym
+    end
+
+    def tags_with_colours
+      return [] if tags.blank?
+
+      tags.split(/\s?,\s?/).collect do |tag|
+        {
+          text: tag,
+          colour: COLOURS.fetch(tag.parameterize(separator: "_").to_sym, "grey"),
+        }
+      end
     end
   end
 end

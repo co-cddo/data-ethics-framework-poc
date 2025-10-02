@@ -3,6 +3,9 @@
     <h2 class="govuk-fieldset__heading">
      <%= question.title %>
     </h2>
+    <% question.tags_with_colours.each do |tag| %>
+      <%= govuk_tag(**tag) %>
+    <% end %>
   </legend>
   <div class="govuk-radios" data-module="govuk-radios">
     <% question.answers.each do |name, answer| %>

@@ -1,0 +1,36 @@
+name: engagement
+heading: Tier 2 Ethics Assessment - Engagement
+questions:
+  involving_affected_groups:
+    title: How are you involving affected groups in the planning, design and development process?
+    type: text
+    next: expert_consultation
+  expert_consultation:
+    title: Have you or are you planning to consult with civil society and domain experts?
+    type: radio
+    answers:
+      'yes':
+        label: "Yes"
+        next: lessons_from_expert_consultation
+      'no':
+        label: "No"
+        next: public_consultation
+  lessons_from_expert_consultation:
+    title: What did you learn from these groups? What potential risks and opportunities have you recorded?
+    type: text
+    next: public_consultation
+  public_consultation:
+    title: Have you or are you planning to run a public consultation or engagement exercise?
+    type: radio
+    answers:
+      'yes':
+        label: "Yes"
+        next: lessons_from_public_consultation
+      'no':
+        label: "No"
+  lessons_from_public_consultation:
+    title: If yes, what did you learn from this engagement? What potential risks and opportunities have you recorded?
+    type: text
+
+
+

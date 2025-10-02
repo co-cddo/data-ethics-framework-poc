@@ -44,6 +44,7 @@ RSpec.describe Content, type: :model do
         a: { name: "a", title: "a", body: "A", position: 2 },
         b: { name: "b", title: "b", body: "B", position: 3 },
         c: { name: "c", title: "c", body: "C", position: 1 },
+        d: { name: "d", title: "d", body: "D", position: nil },
       }
     end
 
@@ -58,6 +59,7 @@ RSpec.describe Content, type: :model do
     let(:a) { described_class.find(:a) }
     let(:b) { described_class.find(:b) }
     let(:c) { described_class.find(:c) }
+    let(:d) { described_class.find(:d) }
 
     describe ".all_by_position" do
       subject(:all_by_position) { described_class.all_by_position }
@@ -70,6 +72,10 @@ RSpec.describe Content, type: :model do
         expect(all_by_position.first).to eq(data[:c])
         expect(all_by_position.last).to eq(data[:b])
       end
+
+      it "ignores content without position" do
+        expect(all_by_position).not_to include(data[:d])
+      end
     end
 
     describe "#next" do
@@ -78,6 +84,10 @@ RSpec.describe Content, type: :model do
         expect(a.next).to eq(b)
         expect(b.next).to be_nil
       end
+
+      it "is nil if content is not positioned" do
+        expect(d.next).to be_nil
+      end
     end
 
     describe "#previous" do
@@ -85,6 +95,10 @@ RSpec.describe Content, type: :model do
         expect(c.previous).to be_nil
         expect(a.previous).to eq(c)
         expect(b.previous).to eq(a)
+      end
+
+      it "is nil if content is not positioned" do
+        expect(d.previous).to be_nil
       end
     end
   end

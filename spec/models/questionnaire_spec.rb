@@ -41,5 +41,51 @@ RSpec.describe Questionnaire, type: :model do
       expect(question.name).to eq(question_data[:name])
       expect(question.title).to eq(question_data[:title])
     end
+
+    context "with tags" do
+      let(:tags) { "Foo" }
+      subject(:question) do
+        described_class::Question.new(
+          title: Faker::Lorem.sentence,
+          type: "text",
+          tags:,
+        )
+      end
+
+      describe "#tags_with_colours" do
+        let(:tags_with_colours) { subject.tags_with_colours }
+        it "matches the number of tags" do
+          expect(tags_with_colours.length).to eq(1)
+        end
+
+        it "text matches tag" do
+          expect(tags_with_colours.first[:text]).to eq(tags)
+        end
+
+        it "defaults to grey" do
+          expect(tags_with_colours.first[:colour]).to eq("grey")
+        end
+
+        context "with know tag" do
+          let(:tags) { "Societal Impact" }
+
+          it "matchs correct colour" do
+            expect(tags_with_colours.first[:colour]).to eq("turquoise")
+          end
+        end
+
+        context "with tag list" do
+          let(:tags) { "Privacy, Fairness" }
+
+          it "matches the number of tags" do
+            expect(tags_with_colours.length).to eq(2)
+          end
+
+          it "includes the correct texts" do
+            expect(tags_with_colours.pluck(:text)).to contain_exactly("Privacy", "Fairness")
+          end
+        end
+      end
+    end
   end
 end

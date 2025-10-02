@@ -12,6 +12,7 @@ questions:
   gdpr:
     title: Is personal or sensitive data being used, and is it protected in accordance with the UK GDPR?
     type: radio
+    tags: Privacy
     answers:
       in_accordance:
         label: 'Yes'
@@ -22,6 +23,7 @@ questions:
   consulted_dpo:
     title: Have you consulted your organisation’s Data Protection Officer (DPO)
     type: radio
+    tags: Privacy
     answers:
       'yes':
         label: 'Yes'
@@ -32,6 +34,7 @@ questions:
   conducted_dpia:
     title: Have you conducted a Data Protection Impact Assessment (DPIA)?
     type: radio
+    tags: Privacy
     answers:
       'yes':
         label: 'Yes'
@@ -46,6 +49,7 @@ questions:
   data_sharing_agreements_in_place:
     title: Are appropriate data sharing agreements in place if data is being shared with other organisations?
     type: radio
+    tags: Privacy,Accountability
     answers:
       'yes':
         label: 'Yes'
@@ -56,12 +60,20 @@ questions:
   governance_structures_in_place:
     title: What governance structures are in place to support the safe, effective and responsible implementation of the project?
     type: text
+    tags: Accountability
     next: responsibility_project_outcomes
   responsibility_project_outcomes:
     title: How have you assigned responsibility for the project’s outcomes? Are the responsible owners able to make necessary changes?
     type: text
+    tags: Accountability
+    next: keeping_researchers_safe
+  keeping_researchers_safe:
+    title: If you are conducting research, how are you keeping researchers and research participants safe?
+    type: text
+    tags: Safety
     next: diversity_and_representativeness
   diversity_and_representativeness:
     title: How are you ensuring diversity and representativeness in your project team? If you’re unable to achieve this, what steps are you taking to gain input from diverse perspectives?
     type: text
+    tags: Fairness
     next: content/engaging_with_stakeholders_and_affected_groups

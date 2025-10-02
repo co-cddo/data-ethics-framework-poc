@@ -3,5 +3,8 @@
 </h2>
 <div id="<%= question.name %>-hint" class="govuk-hint">
   <%= question.hint %>
+  <% question.tags_with_colours.each do |tag| %>
+    <%= govuk_tag(**tag) %>
+  <% end %>
 </div>
 <%= textarea_tag question.name, session[question.id], class: "govuk-textarea" %>

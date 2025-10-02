@@ -1,5 +1,5 @@
 name: level_two
-heading: Tier 2 ethics assessment
+heading: Tier 2 Ethics Assessment
 questions:
   the_problem_to_be_solved:
     title: Describe the problem you’re trying to solve in non-technical terms
@@ -56,4 +56,12 @@ questions:
   governance_structures_in_place:
     title: What governance structures are in place to support the safe, effective and responsible implementation of the project?
     type: text
-
+    next: responsibility_project_outcomes
+  responsibility_project_outcomes:
+    title: How have you assigned responsibility for the project’s outcomes? Are the responsible owners able to make necessary changes?
+    type: text
+    next: diversity_and_representativeness
+  diversity_and_representativeness:
+    title: How are you ensuring diversity and representativeness in your project team? If you’re unable to achieve this, what steps are you taking to gain input from diverse perspectives?
+    type: text
+    next: content/engaging_with_stakeholders_and_affected_groups

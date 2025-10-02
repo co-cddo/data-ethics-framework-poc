@@ -1,0 +1,6 @@
+name: engagement
+heading: Tier 2 Ethics Assessment - Engagement
+questions:
+  involving_affected_groups:
+    title: How are you involving affected groups in the planning, design and development process?
+    type: text

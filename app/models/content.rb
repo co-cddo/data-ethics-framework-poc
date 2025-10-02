@@ -19,7 +19,7 @@ class Content
     end
 
     def all_by_position
-      @all_by_position ||= all.values.select{ |v| v[:position].present? }.sort_by { |v| v[:position] }
+      @all_by_position ||= all.values.select { |v| v[:position].present? }.sort_by { |v| v[:position] }
     end
 
     def reset_all_by_position
@@ -38,7 +38,7 @@ class Content
   end
 
   def next
-    return if index .nil? || (index + 1) == self.class.all_by_position.length # it's the last one
+    return if index.nil? || (index + 1) == self.class.all_by_position.length # it's the last one
 
     next_datum = self.class.all_by_position[index + 1]
     self.class.find(next_datum[:name])

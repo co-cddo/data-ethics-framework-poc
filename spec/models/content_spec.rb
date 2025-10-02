@@ -44,7 +44,7 @@ RSpec.describe Content, type: :model do
         a: { name: "a", title: "a", body: "A", position: 2 },
         b: { name: "b", title: "b", body: "B", position: 3 },
         c: { name: "c", title: "c", body: "C", position: 1 },
-        d: { name: "d", title: "d", body: "D", position: nil }
+        d: { name: "d", title: "d", body: "D", position: nil },
       }
     end
 

@@ -39,8 +39,8 @@
         )
         header.with_navigation_item(
           text: 'Questionnaire',
-          href: content_path(id: :evaluate_your_project),
-          active: current_page?(content_path(id: :evaluate_your_project))
+          href: questionnaire_questions_path(questionnaire_id: :ethics_self_assessment),
+          active: current_page?(questionnaire_questions_path(questionnaire_id: :ethics_self_assessment))
         )
       end
     %>

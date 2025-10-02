@@ -1,17 +1,28 @@
-<h1>Your answers</h1>
+<h1 class="govuk-heading-l">Your answers</h1>
 
-<% @report.each do |questionnaire, questions| %>
-  <h2>Questionnaire: <%= questionnaire.to_s.titleize %></h2>
-  <ul>
-    <% questions.each do |question, answer| %>
-      <li>
-        To the question <em><%= question.to_s.humanize %></em>
-        you answered <em><%= answer.to_s.humanize %></em>.
-      </li>
-    <% end %>
-  </ul>
+<% if @report %>
+  <% @report.each do |questionnaire, questions| %>
+    <h2 class="govuk-heading-m">Questionnaire: <%= questionnaire.to_s.titleize %></h2>
+    <%=
+      govuk_summary_list do |summary_list|
+        questions.each do |question, answer|
+          summary_list.with_row do |row|
+            row.with_key(text: question.to_s.humanize)
+            row.with_value(text: answer.to_s.humanize)
+            row.with_action(
+              text: "Change",
+              href: questionnaire_question_path(questionnaire_id: questionnaire, id: question)
+            )
+          end
+        end
+      end
+    %>
+  <% end %>
+
+  <p class="govuk-body">Your total score was <%= @score %>.</p>
+<% else %>
+  <p class="govuk-body">No answers currently submitted.</p>
 <% end %>
 
-<p>Your total score was <%= @score %>.</p>
-
-<%= link_to  "Level two questions", content_path(id: :level_two) %>
+<p><%= govuk_link_to  "Start of Level one questions", content_path(id: :evaluate_your_project), class: "no-print" %></p>
+<p><%= govuk_link_to  "Start of Level two questions", content_path(id: :level_two), class: "no-print" %></p>
